@@ -21,4 +21,9 @@ void        platform_stop_timer(void);
 
 enum handler_return timer_tick(zx_time_t now);
 
+// Save timer state in preparation for suspend-to-RAM
+void platform_prep_suspend_timer(void);
+// Restore timer state from a previous save
+void platform_resume_timer(void);
+
 __END_CDECLS
